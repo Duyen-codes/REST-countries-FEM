@@ -5,6 +5,11 @@ toggleBtn.addEventListener("click", () => {
 });
 const cards = document.querySelector(".cards");
 
+// Reload page
+const logo = document.querySelector(".logo");
+logo.addEventListener("click", function () {
+  window.location.reload();
+});
 // Fetch countries
 async function fetchAllCountries() {
   const response = await fetch("https://restcountries.com/v2/all");
