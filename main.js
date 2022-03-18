@@ -62,7 +62,9 @@ const search = function () {
   cards.innerHTML = "";
   fetchAllCountries().then((countries) => {
     let matchedCountries = countries.filter((country) =>
-      country.name.toLowerCase().includes(searchInput.value.toLowerCase())
+      country.name.common
+        .toLowerCase()
+        .includes(searchInput.value.toLowerCase())
     );
     renderCard(matchedCountries);
   });
