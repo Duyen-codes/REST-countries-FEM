@@ -93,6 +93,7 @@ main {
   border-radius: 0.5rem;
   width: 100%;
   max-width: 500px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
 }
 
 .search-input {
@@ -118,6 +119,7 @@ i {
 
 .custom-select {
   position: relative;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
 }
 
 select {
