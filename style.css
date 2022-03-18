@@ -45,13 +45,14 @@ img {
 
 header {
   background: var(--clr-card-background);
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
   display: flex;
   justify-content: space-between;
 }
 
 header a {
   font-weight: 800;
+  font-size: 2rem;
 }
 
 button {
