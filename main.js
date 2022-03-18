@@ -53,7 +53,7 @@ const search = function () {
   });
 };
 
-searchInput.addEventListener("keyup", search);
+searchInput.addEventListener("input", search);
 
 // filter
 
