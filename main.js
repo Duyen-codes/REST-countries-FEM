@@ -74,3 +74,6 @@ const filterCountries = function () {
   });
 };
 select.addEventListener("change", filterCountries);
+
+// MODAL
+const modal = document.querySelector(".modal");

@@ -72,6 +72,8 @@ header button {
 /* MAIN */
 main {
   padding: 3rem 2rem;
+  /* set position relative for positioning modal  */
+  position: relative;
 }
 
 /* search filter container  */
@@ -155,6 +157,40 @@ select {
 
 .country-info {
   font-weight: 600;
+}
+
+/* MODAL  */
+.modal {
+  padding: 3rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: var(--clr-body-background);
+  color: var(--clr-text);
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn {
+  background: var(--clr-card-background);
+  color: var(--clr-text);
+  border: none;
+  padding: 0.5rem 2rem;
+
+  border-radius: 0.3rem;
+  font-size: inherit;
+  font-weight: 300;
+}
+
+.modal.open {
+  visibility: visible;
 }
 
 @media screen and (min-width: 768px) {
