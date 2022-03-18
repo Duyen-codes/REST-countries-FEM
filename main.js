@@ -11,6 +11,7 @@ toggleBtn.addEventListener("click", () => {
     themeIcon.classList.add("fa-moon");
   }
 });
+
 const cards = document.querySelector(".cards");
 
 // Reload page
@@ -39,7 +40,7 @@ const renderCard = (countries) => {
   cards.innerHTML = "";
   countries.forEach((country) => {
     const html = `
-    <a href="#" class="card">
+    <div href="#" class="card">
     <img class="flag" src="${country.flag}" alt="" />
     <div class="content">
       <h3 class="name">${country.name}</h3>
@@ -48,7 +49,7 @@ const renderCard = (countries) => {
   
       <div><span class="country-info">Capital: </span><span class="capital">${country.capital}</span></div>
     </div>
-  </a>`;
+  </div>`;
     cards.insertAdjacentHTML("beforeend", html);
   });
 };
