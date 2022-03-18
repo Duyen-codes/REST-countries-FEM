@@ -19,6 +19,7 @@ const logo = document.querySelector(".logo");
 logo.addEventListener("click", function () {
   window.location.reload();
 });
+
 // Fetch countries
 async function fetchAllCountries() {
   const response = await fetch("https://restcountries.com/v3.1/all");
@@ -30,10 +31,8 @@ async function fetchAllCountries() {
   return countries;
 }
 
-fetchAllCountries();
 // Render cards
 fetchAllCountries().then((countries) => {
-  console.log(countries);
   renderCard(countries);
 });
 
@@ -57,7 +56,7 @@ const renderCard = (countries) => {
 
 // // Search
 const searchInput = document.querySelector(".search-input");
-
+// Define function using function expression
 const search = function () {
   cards.innerHTML = "";
   fetchAllCountries().then((countries) => {
@@ -72,10 +71,11 @@ const search = function () {
 
 searchInput.addEventListener("input", search);
 
-// filter
+// filter by region
 
 let select = document.querySelector("select");
 
+// Define function using function expression
 const filterCountries = function () {
   cards.innerHTML = "";
   fetchAllCountries().then((countries) => {

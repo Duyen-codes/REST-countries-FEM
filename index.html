@@ -32,6 +32,7 @@
         <div class="custom-select">
           <select name="regions" id="regions" aria-label="regions">
             <option value="">Filter by Region</option>
+            <option value="all">All regions</option>
             <option value="africa">Africa</option>
             <option value="americas">America</option>
             <option value="asia">Asia</option>
@@ -43,7 +44,7 @@
 
       <section class="cards">
         <!-- <div class="card card-{country.name}">
-          <img class="flag" src="${country.flag}" alt="" />
+          <img class="flag" src="${country.flag}" alt="${country.name} flag" />
           <div class="content">
             <h3 class="name">${country.name}</h3>
             <div><span class="country-info">Population: </span><span class="population">${country.population}</span></div>
