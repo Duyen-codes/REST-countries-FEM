@@ -15,4 +15,50 @@ html {
 
 body {
   font-family: "Nunito Sans", sans-serif;
+  --clr-body-background: hsl(207, 26%, 17%);
+  --clr-card-background: hsl(209, 23%, 22%);
+  --clr-text: hsl(0, 0%, 100%);
+  --clr-input-text: hsl(0, 0%, 100%);
+  background: var(--clr-body-background);
+  color: var(--clr-font);
+  font-size: 1.6rem;
+}
+
+.light {
+  --clr-body-background: hsl(0, 0%, 98%);
+  --clr-card-background: hsl(0, 0%, 100%);
+  --clr-text: hsl(200, 15%, 8%);
+  --clr-input-text: hsl(0, 0%, 52%);
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-text);
+}
+
+/* HEADER  */
+
+header {
+  background: var(--clr-card-background);
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+header a {
+  font-weight: 800;
+}
+
+button {
+  cursor: pointer;
+}
+
+header button {
+  background: var(--clr-card-background);
+  color: var(--clr-text);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }

@@ -1,3 +1,8 @@
+const toggleBtn = document.querySelector(".btn-toggle");
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("light");
+});
+
 async function fetchAllCountries() {
   const response = await fetch("https://restcountries.com/v2/all");
   if (!response.ok) {
