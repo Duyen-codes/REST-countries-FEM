@@ -65,7 +65,15 @@ header button {
 
 /* MAIN */
 main {
-  padding: 2rem;
+  padding: 3rem 2rem;
+}
+
+/* search filter container  */
+
+.search-filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
 }
 
 /* SEARCH FIELD  */
@@ -96,3 +104,14 @@ i {
 }
 
 /* FILTER  */
+
+.custom-select {
+  position: relative;
+}
+
+select {
+  background: var(--clr-card-background);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  color: var(--clr-text);
+}
