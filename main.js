@@ -21,7 +21,7 @@ logo.addEventListener("click", function () {
 });
 // Fetch countries
 async function fetchAllCountries() {
-  const response = await fetch("https://restcountries.com/v2/all");
+  const response = await fetch("https://restcountries.com/v3.1/all");
   if (!response.ok) {
     const message = `An error has occured: ${response.status}`;
     throw new Error(message);
@@ -42,13 +42,13 @@ const renderCard = (countries) => {
   countries.forEach((country) => {
     const html = `
     <div class="card">
-    <img class="flag" src="${country.flag}" alt="" />
+    <img class="flag" src="${country.flags.svg}" alt="" />
     <div class="content">
-      <h3 class="name">${country.name}</h3>
+      <h3 class="name">${country.name.common}</h3>
       <div><span class="country-info">Population: </span><span class="population">${country.population}</span></div>
       <div><span class="country-info">Region: </span><span class="region">${country.region}</span></div>
   
-      <div><span class="country-info">Capital: </span><span class="capital">${country.capital}</span></div>
+      <div><span class="country-info">Capital: </span><span class="capital">${country.capital?.[0]}</span></div>
     </div>
   </div>`;
     cards.insertAdjacentHTML("beforeend", html);
