@@ -25,20 +25,18 @@ fetchAllCountries().then((countries) => {
 const renderCard = (countries) => {
   cards.innerHTML = "";
   countries.forEach((country) => {
-    cards.insertAdjacentHTML(
-      "beforeend",
-      `
-  <a href="#" class="card">
-  <img class="flag" src="${country.flag}" alt="" />
-  <div class="content">
-    <h3 class="name">${country.name}</h3>
-    <div><span class="country-info">Population: </span><span class="population">${country.population}</span></div>
-    <div><span class="country-info">Region: </span><span class="region">${country.region}</span></div>
-
-    <div><span class="country-info">Capital: </span><span class="capital">${country.capital}</span></div>
-  </div>
-</a>`
-    );
+    const html = `
+    <a href="#" class="card">
+    <img class="flag" src="${country.flag}" alt="" />
+    <div class="content">
+      <h3 class="name">${country.name}</h3>
+      <div><span class="country-info">Population: </span><span class="population">${country.population}</span></div>
+      <div><span class="country-info">Region: </span><span class="region">${country.region}</span></div>
+  
+      <div><span class="country-info">Capital: </span><span class="capital">${country.capital}</span></div>
+    </div>
+  </a>`;
+    cards.insertAdjacentHTML("beforeend", html);
   });
 };
 
