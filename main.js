@@ -19,7 +19,6 @@ async function fetchAllCountries() {
 fetchAllCountries();
 // Render cards
 fetchAllCountries().then((countries) => {
-  console.log(countries);
   renderCard(countries);
 });
 
@@ -47,7 +46,6 @@ const searchInput = document.querySelector(".search-input");
 
 const search = function () {
   cards.innerHTML = "";
-  console.log("searching");
   fetchAllCountries().then((countries) => {
     let matchedCountries = countries.filter((country) =>
       country.name.toLowerCase().includes(searchInput.value.toLowerCase())
@@ -68,7 +66,6 @@ const filterCountries = function () {
     let filteredCountries = countries.filter(
       (country) => country.region.toLowerCase() == select.value.toLowerCase()
     );
-    console.log(filteredCountries);
     renderCard(filteredCountries);
   });
 };
