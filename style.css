@@ -62,3 +62,37 @@ header button {
   gap: 0.5rem;
   align-items: center;
 }
+
+/* MAIN */
+main {
+  padding: 2rem;
+}
+
+/* SEARCH FIELD  */
+.search-field {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  place-items: center;
+  background: var(--clr-card-background);
+  border-radius: 0.5rem;
+}
+
+.search-input {
+  border: none;
+  background: var(--clr-card-background);
+  color: var(--clr-input-text);
+  padding: 2rem 0;
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.search-input::placeholder {
+  font-weight: 600;
+}
+
+i {
+  color: var(--clr-text);
+  font-size: 1.8rem;
+}
+
+/* FILTER  */

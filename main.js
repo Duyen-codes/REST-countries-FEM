@@ -14,6 +14,6 @@ async function fetchAllCountries() {
   return countries;
 }
 
-fetchAllCountries().then((countries) => {
-  countries.forEach((country) => console.log(country.flag));
-});
+// fetchAllCountries().then((countries) => {
+//   countries.forEach((country) => console.log(country.flag));
+// });
