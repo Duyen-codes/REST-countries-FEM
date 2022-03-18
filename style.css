@@ -122,6 +122,7 @@ select {
   padding: 2rem 4rem;
   border-radius: 0.5rem;
   color: var(--clr-text);
+  border: none;
 }
 
 /* Cards  */
