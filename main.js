@@ -16,18 +16,17 @@ async function fetchAllCountries() {
   return countries;
 }
 
+fetchAllCountries();
 // Render cards
 fetchAllCountries().then((countries) => {
-  countries.forEach((country) => {
-    renderCard(country);
-  });
+  renderCard(countries);
 });
 
-const renderCard = (country) => {
-  cards.innerHTML = "";
-  cards.insertAdjacentHTML(
-    "beforeend",
-    `
+const renderCard = (countries) => {
+  countries.forEach((country) => {
+    cards.insertAdjacentHTML(
+      "beforeend",
+      `
   <a href="#" class="card">
   <img class="flag" src="${country.flag}" alt="" />
   <div class="content">
@@ -38,25 +37,22 @@ const renderCard = (country) => {
     <div><span class="country-info">Capital: </span><span class="capital">${country.capital}</span></div>
   </div>
 </a>`
-  );
+    );
+  });
 };
 
-// Search
+// // Search
 const searchInput = document.querySelector(".search-input");
 
 const search = function () {
-  console.log("searching", searchInput.value);
+  cards.innerHTML = "";
+  console.log("searching");
   fetchAllCountries().then((countries) => {
-    countries
-      .filter((country) =>
-        country.name.toLowerCase().includes(searchInput.value.toLowerCase())
-      )
-      .forEach((country) => {
-        console.log("from search", country);
-        renderCard(country);
-      });
+    let matchedCountries = countries.filter((country) =>
+      country.name.toLowerCase().includes(searchInput.value.toLowerCase())
+    );
+    renderCard(matchedCountries);
   });
 };
-searchInput.addEventListener("keyup", search);
 
-// Filter
+searchInput.addEventListener("keyup", search);
