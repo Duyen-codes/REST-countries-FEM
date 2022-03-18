@@ -24,9 +24,10 @@ fetchAllCountries().then((countries) => {
     <img class="flag" src="${country.flag}" alt="" />
     <div class="content">
       <h3 class="name">${country.name}</h3>
-      <p>Population: <span class="population">71234</span></p>
-      <p>Region: <span class="region">${country.region}</span></p>
-      <p>Capital: <span class="capital">${country.capital}</span></p>
+      <div><span class="country-info">Population: </span><span class="population">${country.population}</span></div>
+      <div><span class="country-info">Region: </span><span class="region">${country.region}</span></div>
+
+      <div><span class="country-info">Capital: </span><span class="capital">${country.capital}</span></div>
     </div>
   </a>`
     );
