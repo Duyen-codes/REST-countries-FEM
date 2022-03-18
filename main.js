@@ -23,6 +23,7 @@ fetchAllCountries().then((countries) => {
 });
 
 const renderCard = (countries) => {
+  cards.innerHTML = "";
   countries.forEach((country) => {
     cards.insertAdjacentHTML(
       "beforeend",
