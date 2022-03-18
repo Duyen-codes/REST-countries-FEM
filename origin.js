@@ -20,36 +20,36 @@ logo.addEventListener("click", function () {
   window.location.reload();
 });
 
-// Fetch countries
-let countriesArray = [];
-async function fetchAllCountries() {
-  const response = await fetch("https://restcountries.com/v3.1/all");
-  if (!response.ok) {
-    const message = `An error has occured: ${response.status}`;
-    throw new Error(message);
-  }
-  const countries = await response.json();
-  return countries;
-}
-
-// Render cards
-fetchAllCountries().then((countries) => {
-  countriesArray = countries;
-  console.log(countriesArray);
-  renderCard(countriesArray);
-});
-
-// function fetchData() {
-//   fetch("https://restcountries.com/v3.1/all")
-//     .then((response) => response.json())
-//     .then((data) => {
-//       countriesArray = data;
-//       renderCard(countriesArray);
-//     });
+// // Fetch countries
+// let countriesArray = [];
+// async function fetchAllCountries() {
+//   const response = await fetch("https://restcountries.com/v3.1/all");
+//   if (!response.ok) {
+//     const message = `An error has occured: ${response.status}`;
+//     throw new Error(message);
+//   }
+//   const countries = await response.json();
+//   return countries;
 // }
 
-// fetchData();
+// // Render cards
+// fetchAllCountries().then((countries) => {
+//   countriesArray = countries;
+//   console.log(countriesArray);
+//   renderCard(countriesArray);
+// });
 
+function fetchData() {
+  fetch("https://restcountries.com/v3.1/all")
+    .then((response) => response.json())
+    .then((data) => {
+      countriesArray = data;
+      renderCard(countriesArray);
+    });
+}
+
+fetchData();
+console.log("outside of fetch", countriesArray);
 const renderCard = (countries) => {
   cards.innerHTML = "";
   countries.forEach((country) => {
