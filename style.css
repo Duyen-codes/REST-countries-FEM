@@ -145,6 +145,7 @@ select {
   flex-direction: column;
   gap: 3rem;
   padding-bottom: 4rem;
+  color: var(--clr-text);
 }
 
 .card img {

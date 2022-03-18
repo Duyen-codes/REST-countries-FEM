@@ -33,6 +33,7 @@ async function fetchAllCountries() {
 fetchAllCountries();
 // Render cards
 fetchAllCountries().then((countries) => {
+  console.log(countries);
   renderCard(countries);
 });
 
@@ -40,7 +41,7 @@ const renderCard = (countries) => {
   cards.innerHTML = "";
   countries.forEach((country) => {
     const html = `
-    <div href="#" class="card">
+    <div class="card">
     <img class="flag" src="${country.flag}" alt="" />
     <div class="content">
       <h3 class="name">${country.name}</h3>
