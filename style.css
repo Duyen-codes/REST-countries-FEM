@@ -155,6 +155,10 @@ select {
 }
 
 @media screen and (min-width: 768px) {
+  /* MAIN */
+  main {
+    padding: 3rem 4rem;
+  }
   /* search filter container  */
 
   .search-filter-container {
