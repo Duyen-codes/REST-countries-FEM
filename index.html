@@ -54,59 +54,68 @@
         </div> -->
       </section>
 
-      <section class="modal">
-        <div class="modal-content">
+      <section class="modal country-info-page">
+        <!-- <div class="modal-content">
+
           <button class="btn back-btn">
             <i class="fa-solid fa-arrow-left"></i>Back
           </button>
-          <div>
-            <img src="" alt="" />
+
+          <div class="country-details">
+            <img src="${country.flags.svg}" alt="${country.name.common} flag" />
+
             <div class="country-content">
-              <h3 class="modal-title">Belgium</h3>
+              <h3 class="modal-title">${country.name.common}</h3>
+              <section>
               <div>
-                <span class="native-name">Native Name:</span>
-                <span>Belgie</span>
+              <div>
+                <span class="native-name country-info">Native Name:</span>
+                <span>${country.name.nativeName}</span>
               </div>
               <div>
-                <span class="population">Population: </span>
-                <span>12345</span>
+                <span class="population country-info">Population: </span>
+                <span>${country.population}</span>
               </div>
               <div>
-                <span class="region">Region: </span>
-                <span>Europe</span>
+                <span class="region country-info">Region: </span>
+                <span>${country.region}</span>
               </div>
               <div>
-                <span class="sub-region">Sub Region: </span>
-                <span>Western Europe</span>
+                <span class="sub-region country-info">Sub Region: </span>
+                <span>${country.subregion}</span>
               </div>
               <div>
-                <span class="capital">Capital: </span>
-                <span>Brussels</span>
+                <span class="capital country-info">Capital: </span>
+                <span>${country.capital[0]}</span>
               </div>
-
-              <div>
-                <span class="domain">Top Level Domain: </span>
-                <span>.be</span>
-              </div>
-              <div>
-                <span class="currency">Currencies:</span>
-                <span>Euro</span>
               </div>
 
               <div>
-                <span class="language">Languages: </span>
+              <div>
+                <span class="domain country-info">Top Level Domain: </span>
+                <span>${country.tld}</span>
+              </div>
+              <div>
+                <span class="currency country-info">Currencies:</span>
+                <span>${country.currencies.name}</span>
+              </div>
+
+              <div>
+                <span class="language country-info">Languages: </span>
                 <span>Dutch, Frech, German</span>
               </div>
-
               <div>
                 <h4>Border Countries</h4>
                 <button class="btn">France</button>
                 <button class="btn">Germany</button>
                 <button class="btn">Netherlands</button>
               </div>
-            </div>
+              </section>
+            
           </div>
-        </div>
+          
+            </div>
+          </div> -->
       </section>
     </main>
     <script src="main.js"></script>
