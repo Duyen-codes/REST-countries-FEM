@@ -153,6 +153,7 @@ select {
 
 .card:hover {
   box-shadow: 5px 8px 10px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--clr-text);
 }
 
 .no-found {
