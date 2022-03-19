@@ -43,6 +43,7 @@ async function fetchAllCountries() {
 // Render cards
 fetchAllCountries().then((countries) => {
   countriesArray = countries;
+  console.log(countriesArray);
   renderCard(countriesArray);
 });
 
@@ -73,9 +74,10 @@ const renderCard = (countries) => {
   </div>`;
     cards.insertAdjacentHTML("beforeend", html);
   });
+
   Array.from(cards.children).forEach((card) => {
     card.addEventListener("click", function (event) {
-      // console.log(event.currentTarget.classList[0]);
+      console.log(event.currentTarget.classList[0]);
       renderClickedCountry(event.currentTarget.classList[0]);
       searchFilterContainer.classList.add("hidden");
       window.scrollTo(0, 0);
@@ -124,6 +126,8 @@ const renderClickedCountry = function (countryName) {
   fetchAllCountries().then((countries) => {
     countries.forEach((country) => {
       if (country.name.common == countryName) {
+        let currency = Object.values(country.currencies)[0].name;
+        let language = Object.values(country.languages)[0];
         let html = `
         
         <div class="modal-content">
@@ -141,7 +145,7 @@ const renderClickedCountry = function (countryName) {
             <div class="content-middle-left">
             <div>
               <span class="native-name country-info">Native Name:</span>
-              <span>${country.name.nativeName}</span>
+              <span>${country.name.nativeName.spa.official}</span>
             </div>
             <div>
               <span class="population country-info">Population: </span>
@@ -168,12 +172,12 @@ const renderClickedCountry = function (countryName) {
             </div>
             <div>
               <span class="currency country-info">Currencies:</span>
-              <span>${country.currencies.name}</span>
+              <span>${currency}</span>
             </div>
 
             <div>
               <span class="language country-info">Languages: </span>
-              <span>Dutch, Frech, German</span>
+              <span>${language}</span>
             </div>
            </div>
             </section>
