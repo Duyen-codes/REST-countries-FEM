@@ -128,6 +128,7 @@ const renderClickedCountry = function (countryName) {
       if (country.name.common == countryName) {
         let currency = Object.values(country.currencies)[0].name;
         let language = Object.values(country.languages)[0];
+
         let html = `
         
         <div class="modal-content">
@@ -202,4 +203,19 @@ const renderClickedCountry = function (countryName) {
   });
 };
 
-// Initial state
+// Go back
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("back-btn")) {
+    console.log("back btn clicked");
+    countryInfoPage.innerHTML = "";
+    searchFilterContainer.classList.remove("hidden");
+    countryInfoPage.classList.remove("active");
+    window.scrollTo(0, 0);
+    // Render cards
+    fetchAllCountries().then((countries) => {
+      countriesArray = countries;
+      console.log(countriesArray);
+      renderCard(countriesArray);
+    });
+  }
+});
