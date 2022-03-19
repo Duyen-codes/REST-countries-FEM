@@ -166,7 +166,7 @@ const renderClickedCountry = function (countryName) {
 
           <div class="country-content">
             <h3 class="modal-title">${country.name.common}</h3>
-            <section class="country-content-middle">
+            <div class="country-content-middle">
             <div class="content-middle-left">
             <div>
               <span class="native-name country-info">Native Name:</span>
@@ -205,7 +205,7 @@ const renderClickedCountry = function (countryName) {
               <span>${language}</span>
             </div>
            </div>
-            </section>
+            </div>
 
             <div class="border-country-container">
             <span>Border Countries:</span>
