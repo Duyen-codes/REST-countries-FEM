@@ -41,22 +41,6 @@ async function fetchAllCountries() {
 }
 
 // Render cards
-fetchAllCountries().then((countries) => {
-  countriesArray = countries;
-  console.log(countriesArray);
-  renderCard(countriesArray);
-});
-
-// function fetchData() {
-//   fetch("https://restcountries.com/v3.1/all")
-//     .then((response) => response.json())
-//     .then((data) => {
-//       countriesArray = data;
-//       renderCard(countriesArray);
-//     });
-// }
-
-// fetchData();
 
 const renderCard = (countries) => {
   cards.innerHTML = "";
@@ -85,6 +69,25 @@ const renderCard = (countries) => {
     });
   });
 };
+
+//Fetch countries and Render on page load
+
+fetchAllCountries().then((countries) => {
+  countriesArray = countries;
+  console.log(countriesArray);
+  renderCard(countriesArray);
+});
+
+// function fetchData() {
+//   fetch("https://restcountries.com/v3.1/all")
+//     .then((response) => response.json())
+//     .then((data) => {
+//       countriesArray = data;
+//       renderCard(countriesArray);
+//     });
+// }
+
+// fetchData();
 
 // Define Search function using function expression
 const search = function () {
@@ -129,12 +132,11 @@ const renderClickedCountry = function (countryName) {
       if (country.name.common == countryName) {
         let currency = Object.values(country.currencies)[0].name;
         let language = Object.values(country.languages)[0];
-        console.log(country.borders);
         if (country.borders == undefined) {
           borderCountries += `<p>None</p>`;
         } else {
           country.borders.forEach((border) => {
-            borderCountries += `<button class="btn">${border}</button>`;
+            borderCountries += `<button class="${border} btn">${border}</button>`;
           });
         }
         let html = `
@@ -220,8 +222,20 @@ document.addEventListener("click", function (e) {
     // Render cards
     fetchAllCountries().then((countries) => {
       countriesArray = countries;
-      console.log(countriesArray);
       renderCard(countriesArray);
     });
   }
+});
+
+// Render border country on click
+document.addEventListener("click", function (e) {
+  let clickedCountry = e.target.classList[0];
+  fetchAllCountries().then((countries) => {
+    countries.forEach((country) => {
+      if (clickedCountry == country.cca3) {
+        renderClickedCountry(country.name.common);
+        window.scrollTo(0, 0);
+      }
+    });
+  });
 });
