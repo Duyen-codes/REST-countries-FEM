@@ -20,29 +20,30 @@
     </header>
 
     <main>
-      <section class="search-filter-container">
-        <div class="search-field">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input
-            class="search-input"
-            type="text"
-            placeholder="Search for a country..."
-          />
-        </div>
+      <div class="main-container">
+        <section class="search-filter-container">
+          <div class="search-field">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              class="search-input"
+              type="text"
+              placeholder="Search for a country..."
+            />
+          </div>
 
-        <select name="regions" id="regions" aria-label="regions">
-          <option value="">Filter by Region</option>
-          <option value="all">All</option>
-          <option value="africa">Africa</option>
-          <option value="americas">America</option>
-          <option value="asia">Asia</option>
-          <option value="europe">Europe</option>
-          <option value="oceania">Oceania</option>
-        </select>
-      </section>
+          <select name="regions" id="regions" aria-label="regions">
+            <option value="">Filter by Region</option>
+            <option value="all">All</option>
+            <option value="africa">Africa</option>
+            <option value="americas">America</option>
+            <option value="asia">Asia</option>
+            <option value="europe">Europe</option>
+            <option value="oceania">Oceania</option>
+          </select>
+        </section>
 
-      <div class="cards">
-        <!-- <div class="card card-{country.name}">
+        <div class="cards">
+          <!-- <div class="card card-{country.name}">
           <img class="flag" src="${country.flag}" alt="${country.name} flag" />
           <div class="content">
             <h3 class="name">${country.name}</h3>
@@ -52,9 +53,10 @@
             <div><span class="country-info">Capital: </span><span class="capital">${country.capital}</span></div>
           </div>
         </div> -->
-      </div>
+        </div>
 
-      <section class="modal country-info-page"></section>
+        <section class="modal country-info-page"></section>
+      </div>
     </main>
     <script src="main.js"></script>
   </body>

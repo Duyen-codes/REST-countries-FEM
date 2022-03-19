@@ -45,7 +45,7 @@ img {
 
 header {
   background: var(--clr-card-background);
-  padding: 2rem 2rem;
+  padding: 2rem 5rem;
   display: flex;
   justify-content: space-between;
 }
@@ -77,6 +77,9 @@ main {
   margin: 0 auto;
 }
 
+.main-container {
+  border: 1px solid white;
+}
 /* search filter container  */
 
 .search-filter-container {
@@ -135,7 +138,6 @@ select {
   gap: 5rem;
   padding-top: 4rem;
   margin: 0 auto;
-  max-width: 90vw;
 }
 
 .card {
