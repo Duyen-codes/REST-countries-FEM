@@ -84,11 +84,13 @@ select.addEventListener("change", (e) => {
   cards.innerHTML = "";
   if (select.value.toLowerCase() == "all") {
     renderCard(countriesArray);
+    select.value = "";
   } else {
     let filteredCountries = countriesArray.filter(
       (country) => country.region.toLowerCase() == select.value.toLowerCase()
     );
     renderCard(filteredCountries);
+    select.value = "";
   }
 });
 

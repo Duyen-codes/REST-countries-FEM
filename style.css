@@ -74,7 +74,6 @@ main {
   padding: 3rem 2rem;
   /* set position relative for positioning modal  */
   position: relative;
-  margin: 0 auto;
 }
 
 /* search filter container  */
@@ -131,8 +130,9 @@ select {
 /* Cards  */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 5rem;
+  place-content: center;
   padding-top: 4rem;
   margin: 0 auto;
 }
