@@ -17,15 +17,19 @@ const cards = document.querySelector(".cards");
 const searchFilterContainer = document.querySelector(
   ".search-filter-container"
 );
+const countryInfoPage = document.querySelector(".country-info-page");
+const backBtn = document.querySelector(".back-btn");
+const searchInput = document.querySelector(".search-input");
+let select = document.querySelector("select");
 
-// Reload page
+// Reload page when click on logo
 const logo = document.querySelector(".logo");
 logo.addEventListener("click", function () {
   window.location.reload();
 });
 
 // Fetch countries
-let countriesArray = [];
+// let countriesArray = [];
 async function fetchAllCountries() {
   const response = await fetch("https://restcountries.com/v3.1/all");
   if (!response.ok) {
@@ -71,7 +75,7 @@ const renderCard = (countries) => {
   });
   Array.from(cards.children).forEach((card) => {
     card.addEventListener("click", function (event) {
-      console.log(event.currentTarget.classList[0]);
+      // console.log(event.currentTarget.classList[0]);
       renderClickedCountry(event.currentTarget.classList[0]);
       searchFilterContainer.classList.add("hidden");
       window.scrollTo(0, 0);
@@ -80,9 +84,7 @@ const renderCard = (countries) => {
   });
 };
 
-// // Search
-const searchInput = document.querySelector(".search-input");
-// Define function using function expression
+// Define Search function using function expression
 const search = function () {
   cards.innerHTML = "";
   fetchAllCountries().then((countries) => {
@@ -101,11 +103,8 @@ const search = function () {
 
 searchInput.addEventListener("input", search);
 
-// filter by region
+// Define filter by region function using function expression
 
-let select = document.querySelector("select");
-
-// Define function using function expression
 const filterCountries = function () {
   cards.innerHTML = "";
   fetchAllCountries().then((countries) => {
@@ -115,14 +114,12 @@ const filterCountries = function () {
     renderCard(filteredCountries);
   });
 };
+
 select.addEventListener("change", filterCountries);
 
 // Render Clicked Country
 
-const countryInfoPage = document.querySelector(".country-info-page");
-const backBtn = document.querySelector(".back-btn");
 const renderClickedCountry = function (countryName) {
-  console.log("rendering clicked country");
   countryInfoPage.innerHTML = "";
   fetchAllCountries().then((countries) => {
     countries.forEach((country) => {
@@ -200,7 +197,5 @@ const renderClickedCountry = function (countryName) {
     });
   });
 };
-// MODAL
-const modal = document.querySelector(".modal");
 
 // Initial state
