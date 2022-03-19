@@ -80,6 +80,10 @@ const search = function () {
         .includes(searchInput.value.toLowerCase())
     );
     renderCard(matchedCountries);
+
+    if (!matchedCountries.length) {
+      cards.innerHTML += `<p class="no-found">No Countries Found</p>`;
+    }
   });
 };
 
