@@ -110,13 +110,27 @@ searchInput.addEventListener("input", search);
 
 // Define filter by region function using function expression
 
+// const filterCountries = function () {
+//   cards.innerHTML = "";
+//   fetchAllCountries().then((countries) => {
+//     let filteredCountries = countries.filter(
+//       (country) => country.region.toLowerCase() == select.value.toLowerCase()
+//     );
+//     renderCard(filteredCountries);
+//   });
+// };
+
 const filterCountries = function () {
   cards.innerHTML = "";
   fetchAllCountries().then((countries) => {
-    let filteredCountries = countries.filter(
-      (country) => country.region.toLowerCase() == select.value.toLowerCase()
-    );
-    renderCard(filteredCountries);
+    if (select.value.toLowerCase() == "all") {
+      renderCard(countries);
+    } else {
+      let filteredCountries = countries.filter(
+        (country) => country.region.toLowerCase() == select.value.toLowerCase()
+      );
+      renderCard(filteredCountries);
+    }
   });
 };
 
