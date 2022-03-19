@@ -130,6 +130,7 @@ select {
 /* Cards  */
 .cards {
   display: grid;
+  /* Note auto-fill instead of auto-fit to prevent 1 card to strech all the screen on search */
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 5rem;
   place-content: center;
