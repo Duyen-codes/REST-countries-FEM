@@ -123,12 +123,20 @@ select.addEventListener("change", filterCountries);
 
 const renderClickedCountry = function (countryName) {
   countryInfoPage.innerHTML = "";
+  let borderCountries = "";
   fetchAllCountries().then((countries) => {
     countries.forEach((country) => {
       if (country.name.common == countryName) {
         let currency = Object.values(country.currencies)[0].name;
         let language = Object.values(country.languages)[0];
-
+        console.log(country.borders);
+        if (country.borders == undefined) {
+          borderCountries += `<p>None</p>`;
+        } else {
+          country.borders.forEach((border) => {
+            borderCountries += `<button class="btn">${border}</button>`;
+          });
+        }
         let html = `
         
         <div class="modal-content">
@@ -146,7 +154,7 @@ const renderClickedCountry = function (countryName) {
             <div class="content-middle-left">
             <div>
               <span class="native-name country-info">Native Name:</span>
-              <span>${country.name.nativeName.spa.official}</span>
+              <span>${country.name.common}</span>
             </div>
             <div>
               <span class="population country-info">Population: </span>
@@ -186,9 +194,7 @@ const renderClickedCountry = function (countryName) {
             <div class="border-country-container">
             <span>Border Countries:</span>
             <div class="country-buttons">
-            <button class="btn">France</button>
-            <button class="btn">Germany</button>
-            <button class="btn">Netherlands</button>
+           ${borderCountries}
             </div>
           </div>
         </div>

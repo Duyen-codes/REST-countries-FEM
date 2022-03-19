@@ -229,6 +229,7 @@ select {
   font-size: inherit;
   font-weight: 300;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+  margin-right: 1rem;
 }
 
 .modal.open {
