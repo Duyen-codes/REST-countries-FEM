@@ -4,8 +4,7 @@ const themeIcon = document.querySelector("i");
 toggleBtn.addEventListener("click", () => {
   document.body.classList.toggle("light");
   if (themeIcon.classList.contains("fa-moon")) {
-    themeIcon.classList.remove("fa-moon");
-    themeIcon.classList.add("fa-sun");
+    themeIcon.classList.replace("fa-moon", "fa-sun");
   } else {
     themeIcon.classList.remove("fa-sun");
     themeIcon.classList.add("fa-moon");
