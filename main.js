@@ -69,13 +69,13 @@ const renderCard = (countries) => {
 };
 
 // search
-searchInput.addEventListener("input", (e) => {
-  const element = e.target.value.toLowerCase();
-  const newCountries = countriesArray.filter((country) =>
-    country.name.common.toLowerCase().includes(element)
-  );
-  renderCard(newCountries);
-});
+// searchInput.addEventListener("input", (e) => {
+//   const element = e.target.value.toLowerCase();
+//   const newCountries = countriesArray.filter((country) =>
+//     country.name.common.toLowerCase().includes(element)
+//   );
+//   renderCard(newCountries);
+// });
 
 // filter
 
@@ -89,7 +89,14 @@ select.addEventListener("change", (e) => {
       (country) => country.region.toLowerCase() == select.value.toLowerCase()
     );
     renderCard(filteredCountries);
-    select.value = "";
+    searchInput.addEventListener("input", (e) => {
+      const element = e.target.value.toLowerCase();
+      const newCountries = countriesArray.filter((country) =>
+        country.name.common.toLowerCase().includes(element)
+      );
+      renderCard(newCountries);
+    });
+    // select.value = "";
   }
 });
 
